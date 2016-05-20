@@ -10,7 +10,7 @@ package redsocial.vo;
  *
  * @author andresfelipe
  */
-class Etiqueta {
+public class Etiqueta {
     private int idEtiqueta;
     private Usuario user;
 
