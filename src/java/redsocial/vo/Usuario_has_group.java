@@ -12,6 +12,7 @@ package redsocial.vo;
  */
 public class Usuario_has_group {
     private Usuario user;
+       private Grupo group;
 
     public Usuario getUser() {
         return user;
@@ -28,5 +29,5 @@ public class Usuario_has_group {
     public void setGroup(Grupo group) {
         this.group = group;
     }
-    private Grupo group;
+
 }
