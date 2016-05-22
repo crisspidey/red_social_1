@@ -30,6 +30,9 @@ public class GrupoDAO implements InterfazRedSocial<Grupo>{
 	    ResultSet rs = st.executeQuery(query);
             int idGrupo = 0;
             String nombre = null;
+            String descripcion = null;
+            String tipo = null;
+            String noticias = null;
             
             while(rs.next()){
                 if(grupos==null){
@@ -41,6 +44,15 @@ public class GrupoDAO implements InterfazRedSocial<Grupo>{
                 
                 nombre = rs.getString("nombre");
                 registro.setNombre(nombre);
+                
+                descripcion = rs.getString("descripcion");
+                registro.setDescripcion(descripcion);
+                
+                tipo = rs.getString("tipo");
+                registro.setTipo(tipo);
+                
+                noticias = rs.getString("noticias");
+                registro.setNoticias(noticias);
                                 
                 grupos.add(registro);
             }
@@ -55,12 +67,15 @@ public class GrupoDAO implements InterfazRedSocial<Grupo>{
     public boolean insert(Grupo t) {
         boolean resultado = false;
         Connection conexion = Conexion.getConnection();
-        String query ="INSERT INTO Grupo (idGrupo, nombre)" + "VALUES(?,?)";
+        String query ="INSERT INTO Grupo (idGrupo, nombre, descripcion, tipo, noticias)" + "VALUES(?, ?, ?, ?, ?)";
         PreparedStatement ps = null;
         try {
             ps=conexion.prepareStatement(query);
             ps.setInt(1, t.getIdGrupo());
             ps.setString(2, t.getNombre());
+            ps.setString(3, t.getDescripcion());
+            ps.setString(4, t.getTipo());
+            ps.setString(5, t.getNoticias());
             
             resultado = ps.execute();
         } catch (Exception e) {
@@ -73,12 +88,15 @@ public class GrupoDAO implements InterfazRedSocial<Grupo>{
     public boolean update(Grupo t) {
          boolean resultado = false;
         Connection conexion = Conexion.getConnection();
-        String query ="UPDATE Grupo SET nombre=? WHERE idGrupo = ?)";
+        String query ="UPDATE Grupo SET nombre=?, descripcion=?, tipo=?, noticias=? WHERE idGrupo = ?)";
         PreparedStatement ps = null;
         try {
             ps=conexion.prepareStatement(query);
             ps.setString(1, t.getNombre());
-            ps.setInt(3, t.getIdGrupo());
+            ps.setString(2, t.getDescripcion());
+            ps.setString(3, t.getTipo());
+            ps.setString(4, t.getNoticias());
+            ps.setInt(5, t.getIdGrupo());
             if (ps.executeUpdate() > 0){
 		    	resultado=true;
 		    }
