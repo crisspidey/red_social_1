@@ -10,7 +10,7 @@ package redsocial.vo;
  *
  * @author andresfelipe
  */
-class Foto {
+public class Foto {
    private int idFoto;
    private String nombre;
    private String descripcion;
