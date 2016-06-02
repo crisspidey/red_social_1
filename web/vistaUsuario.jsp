@@ -20,7 +20,8 @@
         <div id="todo2">
         <div class="container">
             <div >
-               <img src="imagenes/red.png"/>
+                
+                <a href="PaginaPrincipal.jsp"><img src="imagenes/red.png"/></a>
                </div>
                     <div ID ="tituloprim"  >
                         <br>
@@ -28,26 +29,22 @@
                      <FONT  face="Comic Sans MS" size=10 color="#FE2E2E"><center>!!SOCIAL FRIENDS!!</center></FONT
                      <br>
                      <br>
-                     <center><FONT  face="verdana" size=5 color="#04B431"><center></center> EL NUEVO MODO DE HACER AMIGOS </FONT></center>
+                     <center><FONT  face="verdana" size=5 color="#FEF9F9"><center></center> EL NUEVO MODO DE HACER AMIGOS </FONT></center>
                     </div>
-            
+             
            
        </div>
         <div id="menu">
            <ul>
-                <li><a href="PaginaPrincipal.jsp">pagina principal</a></li>
-		<li><a href="CrearRedSocial.jsp">Crear red social</a></li>
+                <li><a href="PaginaPrincipal.jsp">Pagina principal</a></li>
+		<li><a href="Grupos.jsp">Grupos</a></li>
+                <li><a href="Buscarusuarios.jsp">Buscar usuarios</a></li>
 		
 		
             </ul>
 	</div>   
-        <h1 class="register-title">Usuarios de la Red</h1>
-                <div class="register">
-                    
-                </div>
-        <div class="register-title">
-            <a href="PaginaPrincipal.jsp" class="register-title">Regresar Inicio</a>
-        </div>
+        
+       
        </div> 
     </body>
 </html>
