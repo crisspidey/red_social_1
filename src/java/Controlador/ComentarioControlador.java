@@ -12,8 +12,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import redsocial.dao.UsuarioDAO;
+import redsocial.vo.Comentario;
 import redsocial.vo.RedSocial;
-import redsocial.vo.Usuario;
 
 /**
  *
@@ -37,10 +37,10 @@ public class ComentarioControlador extends HttpServlet{
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet RegistrarseControlador</title>");            
+            out.println("<title>Servlet ComentarioControlador</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet RegistrarseControlador at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet ComentarioControlador at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -73,14 +73,9 @@ public class ComentarioControlador extends HttpServlet{
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
             int idntifier = Integer.parseInt(request.getParameter("idComentario"));
-            String nombre = request.getParameter("usuarioN");
-            String nick = request.getParameter("nicknameN");
-            int edad = Integer.parseInt(request.getParameter("edadN"));
-            String pass = request.getParameter("contraseN");
-            String correo = request.getParameter("correoN");
-            int idred = Integer.parseInt(request.getParameter("idredN"));
-            Usuario user = new Usuario();
-            RedSocial red=new RedSocial();
+            String nombre = request.getParameter("textoC");
+            String fecha = request.getParameter("fechaC");
+            Comentario comment = new Comentario();
             red.setIdRedSocial(idred);
             user.setIdUsuario(idntifier);
             user.setNombre(nombre);
