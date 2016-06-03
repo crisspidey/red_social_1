@@ -16,7 +16,7 @@ public class Comentario {
    private int idComentario;
    private String texto;
    private Date fecha;
-
+   private Usuario usuario;
     public int getIdComentario() {
         return idComentario;
     }
@@ -44,9 +44,8 @@ public class Comentario {
     public Usuario getUsuario() {
         return usuario;
     }
-
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
-    }
-   private Usuario usuario;
+    
+   
 }
+   
+

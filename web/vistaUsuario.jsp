@@ -36,14 +36,33 @@
        </div>
         <div id="menu">
            <ul>
-                <li><a href="PaginaPrincipal.jsp">Pagina principal</a></li>
 		<li><a href="Grupos.jsp">Grupos</a></li>
                 <li><a href="Buscarusuarios.jsp">Buscar usuarios</a></li>
 		
 		
             </ul>
 	</div>   
-        
+        <form  method="POST" action="UsuarioControlador">
+                    <div class="register">
+                
+                    <input type="text" class="register-input" placeholder="Url foto" id="urlfoto" name="url">
+                    <input type="text" class="register-input" placeholder="Descripcion" id="idRed" name="desc">
+                    </td>
+                    <input type="submit" name="accion" value="Publicar" class="register-button">
+                    </div>
+                </form>
+            <p>
+                
+            </p>
+             <form  method="POST" action="UsuarioControlador">
+                    <div class="register">
+                
+                    <input type="text" class="register-input" placeholder="Comentario" id="Comentario" name="comentario">
+                    
+                    </td>
+                    <input type="submit" name="accion" value="Publicar" class="register-button">
+                    </div>
+                </form>
        
        </div> 
     </body>

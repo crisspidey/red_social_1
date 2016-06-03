@@ -15,6 +15,7 @@ public class Foto {
    private String nombre;
    private String descripcion;
    private Etiqueta etiqueta;
+  
 
     public int getIdFoto() {
         return idFoto;
@@ -43,7 +44,7 @@ public class Foto {
     public Etiqueta getEtiqueta() {
         return etiqueta;
     }
-
+    
     public void setEtiqueta(Etiqueta etiqueta) {
         this.etiqueta = etiqueta;
     }

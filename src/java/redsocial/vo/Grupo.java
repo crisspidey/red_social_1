@@ -13,7 +13,11 @@ package redsocial.vo;
 public class Grupo {
     private int idGrupo;
     private String nombre;
-
+    private String descripcion;
+    private String tipo;
+    private String noticia;
+    
+    
     public int getIdGrupo() {
         return idGrupo;
     }
@@ -46,15 +50,13 @@ public class Grupo {
         this.tipo = tipo;
     }
 
-    public String getNoticias() {
-        return noticias;
+    public String getNoticia() {
+        return noticia;
     }
 
-    public void setNoticias(String noticias) {
-        this.noticias = noticias;
+    public void setNoticia(String noticias) {
+        this.noticia = noticias;
     }
-    private String descripcion;
-    private String tipo;
-    private String noticias;
+    
     
 }

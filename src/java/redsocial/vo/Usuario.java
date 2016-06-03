@@ -18,7 +18,7 @@ public class Usuario {
     private String clave;
     private String correo;
     private RedSocial redsocial;
-
+   
     public int getIdUsuario() {
         return idUsuario;
     }
@@ -66,9 +66,8 @@ public class Usuario {
     public void setCorreo(String correo) {
         this.correo = correo;
     }
-
-    public RedSocial
-         getRedsocial() {
+    
+    public RedSocial getRedsocial() {
         return redsocial;
     }
 
@@ -79,14 +78,14 @@ public class Usuario {
     public Grupo getGrupo() {
         return grupo;
     }
-
+    
     public void setGrupo(Grupo grupo) {
         this.grupo = grupo;
     }
-
+    
     public Foto getFoto() {
         return foto;
-    }
+}
 
     public void setFoto(Foto foto) {
         this.foto = foto;

@@ -51,8 +51,8 @@ public class GrupoDAO implements InterfazRedSocial<Grupo>{
                 tipo = rs.getString("tipo");
                 registro.setTipo(tipo);
                 
-                noticias = rs.getString("noticias");
-                registro.setNoticias(noticias);
+                noticias = rs.getString("noticia");
+                registro.setNoticia(noticias);
                                 
                 grupos.add(registro);
             }
@@ -67,7 +67,7 @@ public class GrupoDAO implements InterfazRedSocial<Grupo>{
     public boolean insert(Grupo t) {
         boolean resultado = false;
         Connection conexion = Conexion.getConnection();
-        String query ="INSERT INTO Grupo (idGrupo, nombre, descripcion, tipo, noticias)" + "VALUES(?, ?, ?, ?, ?)";
+        String query ="INSERT INTO Grupo (nombre, descripcion, tipo, noticias)" + "VALUES(?, ?, ?, ?, ?)";
         PreparedStatement ps = null;
         try {
             ps=conexion.prepareStatement(query);
@@ -75,7 +75,7 @@ public class GrupoDAO implements InterfazRedSocial<Grupo>{
             ps.setString(2, t.getNombre());
             ps.setString(3, t.getDescripcion());
             ps.setString(4, t.getTipo());
-            ps.setString(5, t.getNoticias());
+            ps.setString(5, t.getNoticia());
             
             resultado = ps.execute();
         } catch (Exception e) {
@@ -95,7 +95,7 @@ public class GrupoDAO implements InterfazRedSocial<Grupo>{
             ps.setString(1, t.getNombre());
             ps.setString(2, t.getDescripcion());
             ps.setString(3, t.getTipo());
-            ps.setString(4, t.getNoticias());
+            ps.setString(4, t.getNoticia());
             ps.setInt(5, t.getIdGrupo());
             if (ps.executeUpdate() > 0){
 		    	resultado=true;
