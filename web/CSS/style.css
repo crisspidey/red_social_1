@@ -392,3 +392,12 @@ div#contenedor{
 div#titulo{
     margin:auto;
 }
+h1 {
+    position:relative;
+    border-collapse: collapse;
+    border: 0.5px solid black;
+    height: 50px;
+    width: 270px;
+    left:16px;
+    top:20px;
+}

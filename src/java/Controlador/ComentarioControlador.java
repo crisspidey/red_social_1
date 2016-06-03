@@ -31,20 +31,26 @@ public class ComentarioControlador extends HttpServlet{
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet ComentarioControlador</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet ComentarioControlador at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        }
+       String action=request.getParameter("comentario");
+       if(action.equals("comentar")){
+           this.capturar(request, response);
+       }
     }
+    
+    protected void capturar(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+            String cap_coment=request.getParameter("coment");
+            response.sendRedirect("Comentarios.jsp");
+            
+    }
+    protected void capturar_url(HttpServletRequest request, HttpServletResponse response) throws IOException{
+            String direccion_url=request.getParameter("url");
+            String descripcion=request.getParameter("description");
+            response.sendRedirect("URLFotos");
+            
+            
+    }
+    
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

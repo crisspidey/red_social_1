@@ -81,6 +81,7 @@ public class RedSocialControlador extends HttpServlet {
             daored.insert(red);
             response.sendRedirect("CrearRedSocial.jsp?mensaje = insertar red ok");
     }
+ 
 
     /**
      * Returns a short description of the servlet.
